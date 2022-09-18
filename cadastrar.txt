@@ -1,0 +1,69 @@
+slug: leisure-home
+codTask:01-D
+quest: The Spencer Family
+task: Allison > Hi Allison
+minDay: 0
+lastDay: 0
+maxDay: 9999
+timeLocals[0][local]: Pool
+timeLocals[0][time]: Sunday-Morning
+timeLocals[1][local]: 2 Bridge
+timeLocals[1][time]: Sunday-Late
+timeLocals[2][local]: Jacuzzi
+timeLocals[2][time]: Monday-Sunshine
+timeLocals[3][local]: Living
+timeLocals[3][time]: Wednesday-Morning
+timeLocals[4][local]: 1 Bridge
+timeLocals[4][time]: Wednesday-Evening
+timeLocals[5][local]: 1 Bridge
+timeLocals[5][time]: Thursday-Evening
+timeLocals[6][local]: Pool
+timeLocals[6][time]: Friday-Morning
+timeLocals[7][local]: 2 Bridge
+timeLocals[7][time]: Saturday-Afternoon
+---------------------------------------------------------
+    {
+        "slug": "leisure-home",
+        "codTask": "01-A",
+        "quest": "The Spencer family ",
+        "task": "Falar com Maise",
+        "minDay": 0,
+        "lastDay": 0,
+        "maxDay": 9999,
+        "taskComplete": false,
+        "taskDisponible": true,
+        "taskRepeat": false,
+        "timeLocals": [
+		{
+		        "local": "Jacuzzi",
+        		"time": "Sunday-Morning",
+		}, {
+		        "local": "Pool",
+        		"time": "Sunday-Evening",
+		}, {
+		        "local": "Living",
+		        "time": "Tuesday-Morning",
+		}, {
+		        "local": "Dining",
+        		"time": "Wednesday-Evening",
+    		}, {
+		        "local": "Dining",
+		        "time": "Thursday-Morning",
+		}, {
+		        "local": "Pool",
+		        "time": "Friday-Evening",
+    		}, {
+		        "local": "Dining",
+        		"time": "Friday-Earl",
+		}, {
+		        "local": "Jacuzzi",
+		        "time": "Saturday-Morning",
+		}, {
+		        "local": "Living",
+		        "time": "Saturday-Afternoon",
+		}
+	],
+        "requirements": [],
+        "minLimites": [],
+        "maxLimites": []
+}
