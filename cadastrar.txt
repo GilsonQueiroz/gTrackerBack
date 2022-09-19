@@ -21,7 +21,7 @@ timeLocals[6][local]: Pool
 timeLocals[6][time]: Friday-Morning
 timeLocals[7][local]: 2 Bridge
 timeLocals[7][time]: Saturday-Afternoon
----------------------------------------------------------
+------------------------------------------------------------
     {
         "slug": "leisure-home",
         "codTask": "01-A",
