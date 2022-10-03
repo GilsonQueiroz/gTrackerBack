@@ -1,10 +1,10 @@
 const _ = require('lodash')
-const Girl = require('./girl')
+const TimePlay = require('./timePlay')
 
-Girl.methods(['get', 'post', 'put', 'delete'])
-Girl.updateOptions({new: true, runValidators: true})
+TimePlay.methods(['get', 'post', 'put', 'delete'])
+TimePlay.updateOptions({new: true, runValidators: true})
 
-Girl.after('post', sendErrorsOrNext).after('put', sendErrorsOrNext)
+TimePlay.after('post', sendErrorsOrNext).after('put', sendErrorsOrNext)
 
 function sendErrorsOrNext(req, res, next) {
     const bundle = res.locals.bundle
@@ -23,4 +23,4 @@ function parseErrors(nodeRestfulErrors) {
     return errors
 }
 
-module.exports = Girl
+module.exports = TimePlay

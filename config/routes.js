@@ -14,12 +14,16 @@ module.exports = function(server) {
     const girlService = require('../api/girl/girlService')
     girlService.register(router,'/girl')
 
-    //API game
+    //API var-itens
     const varSaveService = require('../api/varSave/varSaveService')
     varSaveService.register(router,'/varsave')
 
-    //API game
+    //API tasks
     const taskService = require('../api/task/taskService')
     taskService.register(router,'/task')
+
+    //API tasks
+    const timePlayService = require('../api/time/timePlayService')
+    taskService.register(router,'/timeplay')
     
 }
