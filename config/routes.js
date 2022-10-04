@@ -24,6 +24,6 @@ module.exports = function(server) {
 
     //API tasks
     const timePlayService = require('../api/time/timePlayService')
-    taskService.register(router,'/timeplay')
+    timePlayService.register(router,'/timeplay')
     
 }

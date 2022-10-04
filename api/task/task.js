@@ -19,6 +19,7 @@ const taskSchema = new mongoose.Schema({
     minDay: { type: Number, min: 0, default: 0 },
     lastDay: { type: Number, min: 0, default: 0 },
     maxDay: { type: Number, max: 9999, default: 9999 },
+    interval: {type: Number, min: 0, default: 0 },
     taskComplete: { type: Boolean, default: false },
     taskDisponible: { type: Boolean, default: true },
     taskRepeat: { type: Boolean, default: false },
