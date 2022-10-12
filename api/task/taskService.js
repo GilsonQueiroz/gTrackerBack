@@ -33,4 +33,27 @@ Task.route('count', function(req,res,next) {
     })
 })
 
+Task.route('dashboard', function(req,res,next) {
+    Task.find({slug : req.query.slug, 'timeLocals.time' : req.query.period , taskDisponible : true, nextDay : { $lte: req.query.day }, maxDay : { $gte: req.query.day } })
+    .exec(function(error, resultados){
+        if (error) {
+            res.status(500).json({errors: [error]})
+        } else {
+            res.json({resultados})
+        }
+    })
+})
+
+Task.route('complete', function(req,res,next) {
+    Task.find({ 'requirements.codTask' : req.query.quest })
+    .exec(function(error, resultados){
+        if (error) {
+            res.status(500).json({errors: [error]})
+        } else {
+            res.json({resultados})
+        }
+    })
+})
+
+
 module.exports = Task

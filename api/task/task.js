@@ -2,13 +2,13 @@ const restful = require('node-restful')
 const mongoose = restful.mongoose
 
 const requirementSchema = new mongoose.Schema({
-    codTask: { type: String, required: true },
-    taskComplete: { type: Boolean, default: false }
+    codTask: { type: String },
+    taskComplete: { type: Boolean }
 })
 
 const timeLocationSchema = new mongoose.Schema({
-    local: { type: String, required: true },
-    time: { type: String, required: true, uppercase: true }
+    time: { type: Number },
+    local: { type: String, uppercase: true }
 })
 
 const taskSchema = new mongoose.Schema({
@@ -17,14 +17,16 @@ const taskSchema = new mongoose.Schema({
     quest: { type: String, required: true },
     task: { type: String, required: true },
     minDay: { type: Number, min: 0, default: 0 },
-    lastDay: { type: Number, min: 0, default: 0 },
+    nextDay: { type: Number, min: 0, default: 0 },
     maxDay: { type: Number, max: 9999, default: 9999 },
     interval: {type: Number, min: 0, default: 0 },
     taskComplete: { type: Boolean, default: false },
     taskDisponible: { type: Boolean, default: true },
     taskRepeat: { type: Boolean, default: false },
+    taskRequire: { type: String },
     timeLocals: [timeLocationSchema],
-    requirements: [requirementSchema]
+    requirements: [requirementSchema],
+    updates: { type: String }
 })
 
 module.exports = restful.model('Task', taskSchema)
