@@ -24,7 +24,7 @@ function parseErrors(nodeRestfulErrors) {
 }
 
 Task.route('count', function(req,res,next) {
-    Task.count(function(error, value) {
+    Task.count({ slug: req.query.slug},function(error, value) {
         if (error) {
             res.status(500).json({errors: [error]})
         } else {
@@ -35,11 +35,24 @@ Task.route('count', function(req,res,next) {
 
 Task.route('dashboard', function(req,res,next) {
     Task.find({slug : req.query.slug, 'timeLocals.time' : req.query.period , taskDisponible : true, nextDay : { $lte: req.query.day }, maxDay : { $gte: req.query.day } })
+    .sort('codTask')
+    .skip(req.query.skip)
+    .limit(req.query.limit)
     .exec(function(error, resultados){
         if (error) {
             res.status(500).json({errors: [error]})
         } else {
             res.json({resultados})
+        }
+    })
+})
+
+Task.route('countdash', function(req,res,next) {
+    Task.count({slug : req.query.slug, 'timeLocals.time' : req.query.period , taskDisponible : true, nextDay : { $lte: req.query.day }, maxDay : { $gte: req.query.day } },function(error, value) {
+        if (error) {
+            res.status(500).json({errors: [error]})
+        } else {
+            res.json({value})
         }
     })
 })
